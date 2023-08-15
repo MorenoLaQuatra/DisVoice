@@ -41,7 +41,7 @@ def praat_vuv(audio_filaname, resultsp, resultst, time_stepF0=0, minf0=75, maxf0
 	if sys.platform.find('win')>=0:
 		command='/praat.exe --run '+PATH+'/vuv_praat.praat '
 	else:
-		command='praat --run '+PATH+'/vuv_praat.praat '
+		command='praat_nogui --run '+PATH+'/vuv_praat.praat '
 	command+=audio_filaname+' '+resultsp +' '+  resultst+' '
 	command+=str(minf0)+' '+str(maxf0)+' '
 	command+=str(time_stepF0)+' '+str(maxVUVPeriod)+' '+str(averageVUVPeriod)
@@ -65,7 +65,7 @@ def praat_formants(audio_filename, results_filename,sizeframe,step, n_formants=5
 	if sys.platform.find('win')>=0:
 		command='praat.exe --run '+PATH+'/FormantsPraat.praat '
 	else:
-		command='praat --run '+PATH+'/FormantsPraat.praat '
+		command='praat_nogui --run '+PATH+'/FormantsPraat.praat '
 	command+=audio_filename + ' '+results_filename+' '
 	command+=str(n_formants)+' '+ str(max_formant) + ' '
 	command+=str(float(sizeframe)/2)+' '
